@@ -1,0 +1,38 @@
+{
+    // General Settings
+    "layer": "top",
+    "margin-top": 14,
+    "margin-bottom": 0,
+    "layer": "top",
+    "margin-left": 0,
+    "margin-right": 0,    
+    "spacing": 0,
+
+    // Load Modules
+    "include": ["~/dotfiles-old/waybar/modules.json"],
+
+    // Modules Left
+    "modules-left": [
+        "custom/appmenu",
+        "group/settings",
+        "wlr/taskbar",
+        "group/quicklinks",
+        "hyprland/window",
+    ],
+
+    // Modules Center
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+
+    // Modules Right    
+    "modules-right": [
+        "pulseaudio",
+        "bluetooth",
+        "battery", 
+        "network",
+        "group/hardware",
+        "clock"
+    ]
+}
+
