@@ -16,9 +16,9 @@
         "all-outputs": true,
         "format": "{}",
         "format-icons": {
-			"urgent": "",
-			"active": "",
-			"default": ""
+            "urgent": "",
+            "active": "",
+            "default": ""
         },
         "persistent-workspaces": {
             // START WORKSPACES
@@ -95,7 +95,7 @@
     "custom/appmenuicon": {
         "format": "",
         "on-click": "rofi -show drun -replace",
-        "on-click-right": "~/dotfiles-old/hypr/scripts/keybindings.sh",
+        //"on-click-right": "~/dotfiles-old/hypr/scripts/keybindings.sh",
         "tooltip": false
     },    
 

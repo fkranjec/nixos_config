@@ -1,49 +1,53 @@
 {pkgs, ...}: let
-  username = "filip";
+  username = "fkranjec";
 in {
   imports = [
     ./packages
   ];
 
-  fonts.fontconfig.enable = true;
+  fonts ={
+    fontconfig ={
+      enable = true;
+    };
+  };
+
+  programs.bash.enable = true;
 
   home = {
     username = "${username}";
     homeDirectory = "/home/${username}";
     stateVersion = "23.11";
+    sessionPath = [
+      "$HOME/.npm-global/bin/"
+    ];
 
     packages = with pkgs; [
-    waybar
-    alacritty
-    thunderbird
-    neovim
-    nodejs
-    brave
-    dunst
-    gcc
-    unzip
-    swww
-    hyprland
-    rofi-wayland
-    gnome.gnome-terminal
-    wayland-protocols
-    wayland-utils
-    mako
-    wayland
-    killall
-    git
-    glxinfo # to check what gpu is running
- 
-        (pkgs.writeShellScriptBin "nvidia-offload" ''
-            export __NV_PRIME_RENDER_OFFLOAD=1
-            export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-            export __GLX_VENDOR_LIBRARY_NAME=nvidia
-            export __VK_LAYER_NV_optimus=NVIDIA_only
-            exec "$0"
-        '')
+      waybar
+      alacritty
+      thunderbird
+      neovim
+      nodejs
+      brave
+      dunst
+      gcc
+      unzip
+      swww
+      hyprland
+      rofi-wayland
+      mattermost-desktop
+      cargo
+      wayland-protocols
+      wayland-utils
+      mako
+      pavucontrol
+      wayland
+      killall
+      git
+      skypeforlinux
+      glxinfo
+      (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
   };
-
   programs.home-manager.enable = true;
 
 }

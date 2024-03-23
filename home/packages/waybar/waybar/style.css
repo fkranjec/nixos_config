@@ -1,10 +1,10 @@
 /* @import 'style-light.css'; */
-@define-color backgroundlight @color8;
+@define-color backgroundlight #FFFFFF;
 @define-color backgrounddark #FFFFFF;
 @define-color workspacesbackground1 @color8;
 @define-color workspacesbackground2 #FFFFFF;
-@define-color bordercolor @color8;
-@define-color textcolor1 @color8;
+@define-color bordercolor white;
+@define-color textcolor1 white;
 @define-color textcolor2 #FFFFFF;
 @define-color textcolor3 #FFFFFF;
 @define-color iconcolor @color8;
@@ -81,7 +81,7 @@ tooltip {
 }
 
 tooltip label {
-    color: @textcolor2;
+    color: black;
 }
 
 /* -----------------------------------------------------
@@ -89,7 +89,7 @@ tooltip label {
  * ----------------------------------------------------- */
 
 #window {
-    background: @backgroundlight;
+    background: transparent;
     margin: 5px 15px 5px 0px;
     padding: 2px 10px 0px 10px;
     border-radius: 12px;
@@ -108,14 +108,13 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #taskbar {
-    background: @backgroundlight;
+    background: transparent;
     margin: 3px 15px 3px 0px;
     padding:0px;
     border-radius: 15px;
     font-weight: normal;
     font-style: normal;
     opacity:0.8;
-    border: 3px solid @backgroundlight;
 }
 
 #taskbar button {
@@ -162,34 +161,6 @@ window#waybar.empty #window {
     color: @iconcolor;
 }
 
-#custom-system {
-    margin-right:15px;
-}
-
-#custom-wallpaper {
-    margin-right:25px;
-}
-
-#custom-waybarthemes, #custom-settings {
-    margin-right:20px;
-}
-
-#custom-chatgpt {
-    margin-right: 15px;
-    background-image: url("../assets/ai-icon.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-right: 24px;
-}
-
-#custom-ml4w-welcome {
-    margin-right: 15px;
-    background-image: url("../assets/ml4w-icon.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-right: 24px;
-}
-
 /* -----------------------------------------------------
  * Idle Inhibator
  * ----------------------------------------------------- */
@@ -215,82 +186,13 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-appmenu, #custom-appmenuwlr {
-    background-color: @backgrounddark;
+    background-color: transparent;
     font-size: 16px;
     color: @textcolor1;
     border-radius: 15px;
     padding: 0px 10px 0px 10px;
     margin: 3px 15px 3px 14px;
     opacity:0.8;
-    border:3px solid @bordercolor;
-}
-
-/* -----------------------------------------------------
- * Custom Exit
- * ----------------------------------------------------- */
-
-#custom-exit {
-    margin: 0px 20px 0px 0px;
-    padding:0px;
-    font-size:20px;
-    color: @iconcolor;
-}
-
-/* -----------------------------------------------------
- * Custom Updates
- * ----------------------------------------------------- */
-
-#custom-updates {
-    background-color: @backgroundlight;
-    font-size: 16px;
-    color: @textcolor2;
-    border-radius: 15px;
-    padding: 2px 10px 0px 10px;
-    margin: 5px 15px 5px 0px;
-    opacity:0.8;
-}
-
-#custom-updates.green {
-    background-color: @backgroundlight;
-}
-
-#custom-updates.yellow {
-    background-color: #ff9a3c;
-    color: #FFFFFF;
-}
-
-#custom-updates.red {
-    background-color: #dc2f2f;
-    color: #FFFFFF;
-}
-
-/* -----------------------------------------------------
- * Custom Youtube
- * ----------------------------------------------------- */
-
-#custom-youtube {
-    background-color: @backgroundlight;
-    font-size: 16px;
-    color: @textcolor2;
-    border-radius: 15px;
-    padding: 2px 10px 0px 10px;
-    margin: 5px 15px 5px 0px;
-    opacity:0.8;
-}
-
-/* -----------------------------------------------------
- * Hardware Group
- * ----------------------------------------------------- */
-
-#disk,#memory,#cpu,#language {
-    margin:0px;
-    padding:0px;
-    font-size:16px;
-    color:@iconcolor;
-}
-
-#language {
-    margin-right:10px;
 }
 
 /* -----------------------------------------------------
@@ -298,14 +200,13 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #clock {
-    background-color: @backgrounddark;
+    background-color: transparent;
     font-size: 16px;
     color: @textcolor1;
     border-radius: 15px;
     padding: 1px 10px 0px 10px;
     margin: 3px 15px 3px 0px;
     opacity:0.8;
-    border:3px solid @bordercolor;   
 }
 
 /* -----------------------------------------------------
@@ -313,7 +214,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #pulseaudio {
-    background-color: @backgroundlight;
+    background-color: transparent;
     font-size: 16px;
     color: @textcolor2;
     border-radius: 15px;
@@ -332,7 +233,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #network {
-    background-color: @backgroundlight;
+    background-color: transparent;
     font-size: 16px;
     color: @textcolor2;
     border-radius: 15px;
@@ -342,12 +243,12 @@ window#waybar.empty #window {
 }
 
 #network.ethernet {
-    background-color: @backgroundlight;
+    background-color: transparent;
     color: @textcolor2;
 }
 
 #network.wifi {
-    background-color: @backgroundlight;
+    background-color: transparent;
     color: @textcolor2;
 }
 
@@ -356,7 +257,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #bluetooth, #bluetooth.on, #bluetooth.connected {
-    background-color: @backgroundlight;
+    background-color: transparent;
     font-size: 16px;
     color: @textcolor2;
     border-radius: 15px;
@@ -376,7 +277,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #battery {
-    background-color: @backgroundlight;
+    background-color: transparent;
     font-size: 16px;
     color: @textcolor2;
     border-radius: 15px;
@@ -387,12 +288,12 @@ window#waybar.empty #window {
 
 #battery.charging, #battery.plugged {
     color: @textcolor2;
-    background-color: @backgroundlight;
+    background-color: transparent;
 }
 
 @keyframes blink {
     to {
-        background-color: @backgroundlight;
+        background-color: transparent;
         color: @textcolor2;
     }
 }

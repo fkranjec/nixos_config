@@ -9,14 +9,13 @@
     "spacing": 0,
 
     // Load Modules
-    "include": ["~/dotfiles-old/waybar/modules.json"],
+    "include": ["~/.config/waybar/modules.json"],
 
     // Modules Left
     "modules-left": [
         "custom/appmenu",
         "group/settings",
         "wlr/taskbar",
-        "group/quicklinks",
         "hyprland/window",
     ],
 

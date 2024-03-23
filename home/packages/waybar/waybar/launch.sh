@@ -1,10 +1,10 @@
 #!/bin/sh
 
-killall waybar
+pkill waybar
 
 if [[ $USER = "filip" ]]
 then
-    waybar -c ~/dotfiles-old/waybar/config -s ~/dotfiles-old/waybar/style.css
+    waybar -c ~/.config/waybar/config -s ~/.config/waybar/style.css
 else
     waybar &
 fi
