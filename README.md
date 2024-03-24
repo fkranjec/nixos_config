@@ -1,4 +1,4 @@
-# NixOs config with flakes and home-manager
+# NixOS config with flakes and home-manager
 ## Hyprland
 ## Waybar
 ## Neovim
