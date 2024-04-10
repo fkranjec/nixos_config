@@ -24,26 +24,27 @@ in {
     packages = with pkgs; [
       waybar
       alacritty
+      erlang_26
+      yaws
+      rebar3
       thunderbird
-      neovim
       nodejs
       brave
-      dunst
       gcc
+      spotify
+      swaynotificationcenter
       unzip
-      swww
-      hyprland
       rofi-wayland
       mattermost-desktop
       cargo
       wayland-protocols
       wayland-utils
-      mako
       pavucontrol
+      pulseaudio
       wayland
       killall
       git
-      skypeforlinux
+      gnumake
       glxinfo
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];

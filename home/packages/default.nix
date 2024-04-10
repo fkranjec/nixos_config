@@ -1,8 +1,12 @@
 {
   imports = [
+    ./alacritty
+    ./swaync
+    ./dunst
     ./git
-    ./nvim
     ./hypr
+    ./nvim
+    ./rofi
     ./waybar
   ];
 }

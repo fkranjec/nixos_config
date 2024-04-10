@@ -1,5 +1,13 @@
 { config, pkgs, ... }:
-
+let
+  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
+    export __NV_PRIME_RENDER_OFFLOAD=1
+    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    export __VK_LAYER_NV_optimus=NVIDIA_only
+    exec -a "$0" "$@"
+  '';
+in
 {
   imports =
     [
@@ -12,9 +20,17 @@
         efi.canTouchEfiVariables = true;
     };
   };
-
+environment.sessionVariables = {
+      LIBVA_DRIVER_NAME = "nvidia";
+      GBM_BACKEND = "nvidia-drm";
+      XDG_SESSION_TYPE = "wayland";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      WLR_NO_HARDWARE_CURSORS = "1";
+    };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  programs = {
+    hyprland.enable = true;
+  };
   networking.hostName = "nixos";
 
   #networking.wireless.enable = true;
@@ -41,7 +57,7 @@
   services = {
      xserver = {
        enable = true;
-       displayManager.sddm.enable = true;
+       displayManager.gdm.enable = true;
      };
     blueman.enable = true;
     printing.enable = true;
@@ -78,21 +94,13 @@
   users.users.fkranjec = {
     isNormalUser = true;
     description = "Filip";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-  
+   
   programs.ssh.startAgent = true;
 
-
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = "1";
-  };
+ 
 
     nixpkgs.overlays = [
         (self: super: {
@@ -106,10 +114,16 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    nvidia-offload
     wget
   ];
-
-  services.xserver.videoDrivers = ["nvidia"];
+  hardware.opengl = {
+        enable = true;
+        driSupport = true;
+        driSupport32Bit = true;
+        extraPackages = with pkgs; [nvidia-vaapi-driver];
+};
+  services.xserver.videoDrivers = ["nvidia" "nvidia-dkms"];
 
   hardware.nvidia = {
         modesetting.enable = true;
@@ -118,20 +132,21 @@
                 finegrained = false;
         };
         open = false;
+        nvidiaPersistenced = true;
         package = config.boot.kernelPackages.nvidiaPackages.stable;
         prime = {
             offload.enable = true;
+            offload.enableOffloadCmd = true;
             amdgpuBusId = "PCI:5:0:0";
             nvidiaBusId = "PCI:1:0:0";
         };
         nvidiaSettings = true;
     };
  
-    hardware.opengl = {
-        extraPackages = with pkgs; [nvidia-vaapi-driver];
-        extraPackages32 = with pkgs.pkgsi686Linux; [nvidia-vaapi-driver];
+  
+  #      extraPackages = with pkgs; [nvidia-vaapi-driver];
+ #       extraPackages32 = with pkgs.pkgsi686Linux; [nvidia-vaapi-driver];
  
-    };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

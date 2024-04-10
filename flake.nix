@@ -5,12 +5,18 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
+    split-monitor-workspaces = {
+      url = "github:fkranjec/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
   outputs = inputs @{
     self,
     nixpkgs,
     home-manager,
+    split-monitor-workspaces,
     ...
   } : {
     nixosConfigurations = {
