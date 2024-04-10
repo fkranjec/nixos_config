@@ -11,6 +11,7 @@ vim.opt.showmode = false
 vim.opt.clipboard = 'unnamedplus'
 
 vim.opt.termguicolors = true
+vim.opt.winblend = 20
 
 vim.opt.breakindent = true
 

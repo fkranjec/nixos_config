@@ -32,6 +32,9 @@ in {
       brave
       gcc
       spotify
+      spotifyd
+      hyprpaper
+      spicetify-cli
       swaynotificationcenter
       unzip
       rofi-wayland

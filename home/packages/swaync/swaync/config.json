@@ -39,7 +39,6 @@
     "menubar",
     "buttons-grid",
     "volume",
-    "backlight",
     "title",
     "dnd",
     "mpris",
@@ -112,16 +111,6 @@
           {
             "label": "󰄁   Select a region",
             "command": "grimblast save area"
-          }
-        ]
-      },
-      "menu#screencast-buttons": {
-        "label": "󰕧",
-        "position": "left",
-        "actions": [
-          {
-            "label": "󰕧   Start OBS-STUDIO",
-            "command": "obs"
           }
         ]
       }

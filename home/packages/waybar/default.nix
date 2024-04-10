@@ -55,7 +55,8 @@
   
   #custom-powermenu {
     margin-top: 6px;
-    margin-left: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
     padding-left: 16px;
     padding-right: 20px;
     border-radius: 8px;
@@ -67,7 +68,8 @@
   
   #mode {
     margin-top: 6px;
-    margin-left: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
     padding-left: 16px;
     padding-right: 20px;
     border-radius: 8px;
@@ -77,7 +79,8 @@
   
   #workspaces {
     margin-top: 6px;
-    margin-left: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
     padding-left: 16px;
     padding-right: 20px;
     border-radius: 8px;
@@ -110,10 +113,15 @@
     text-shadow: inherit;
     color: #81a1c1;
   }
-  
+
+   #workspaces button.active {
+    color: #81a1c1;
+  }
+ 
   #temperature {
     margin-top: 6px;
-    margin-left: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
     /*margin-right: 12px;*/
     border-radius: 8px;
     transition: none;
@@ -124,7 +132,8 @@
   
   #pulseaudio {
     margin-top: 6px;
-    margin-left: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
     border-radius: 8px;
     transition: none;
     padding: 0 10px;
@@ -134,7 +143,8 @@
   
   #battery {
     margin-top: 6px;
-    margin-left: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
     /* margin-right: 12px; */
     border-radius: 8px;
     transition: none;
@@ -162,7 +172,8 @@
   
   #backlight {
     margin-top: 6px;
-    margin-left: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
     border-radius: 8px;
     transition: none;
     padding: 10px 10px;
@@ -172,7 +183,8 @@
   
   #custom-wl-gammarelay-temperature {
     margin-top: 6px;
-    margin-left: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
     border-radius: 8px;
     transition: none;
     padding: 10px 10px;
@@ -183,6 +195,7 @@
   #cpu {
     margin-top: 6px;
     margin-left: 6px;
+    margin-right: 6px;
     border-radius: 8px;
     transition: none;
     padding: 10px 10px;
@@ -192,7 +205,8 @@
   
   #memory {
     margin-top: 6px;
-    margin-left: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
     border-radius: 8px;
     transition: none;
     padding: 10px 10px;
@@ -202,7 +216,8 @@
   
   #clock {
     margin-top: 6px;
-    margin-left: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
     border-radius: 8px;
     transition: none;
     padding: 10px 10px;
@@ -212,7 +227,8 @@
   
   #tray {
     margin-top: 6px;
-    margin-right: 12px;
+    margin-right: 6px;
+    margin-right: 6px;
     border-radius: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -222,8 +238,8 @@
   
   #network {
     margin-top: 6px;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
     border-radius: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -231,19 +247,10 @@
     background: #2e3440;
   }
 
-#tray {
-    margin-top: 6px;
-    margin-left: 12px;
-    border-radius: 8px;
-    transition: none;
-    padding: 0 10px;
-    color: #a3be8c;
-    background: #2e3440;
-  }
-
 #idle_inhibitor {
     margin-top: 6px;
-    margin-left: 12px; 
+    margin-left: 6px; 
+    margin-right: 6px;
     border-radius: 8px;
     transition: none;
     padding: 0 10px;
@@ -251,39 +258,65 @@
     background: #2e3440;
 }
 
-#custom-media{
+#custom-spotify{
     margin-top: 6px;
-    margin-left: 12px;
+    margin-left: 6px;
+    margin-right: 6px;
     border-radius: 8px;
     transition: none;
     padding: 0 20px 0 20px;
     color: #a3be8c;
     background: #2e3440;
-}   '';
+}
+
+#custom-media{
+    margin-top: 6px;
+    margin-left: 6px;
+    margin-right: 6px; 
+    border-radius: 8px;
+    transition: none;
+    padding: 0 20px 0 20px;
+    color: #a3be8c;
+    background: #2e3440;
+}   
+#custom-notification{
+     margin-top: 6px;
+    margin-left: 6px; 
+    margin-right: 6px; 
+    border-radius: 8px;
+    transition: none;
+    padding-left: 10px;
+    padding-right: 14px;
+    color: #b48ead;
+    background: #2e3440;
+
+}
+'';
    
    settings = [{
         "height" = 37;
         "layer"= "top";
-        "modules-left"= ["custom/powermenu" "hyprland/workspaces" "custom/media" "custom/spotify"];
-        "modules-center"= ["hyprland/window"];
-        "modules-right"= ["temperature" "cpu" "memory" "clock" "pulseaudio" "battery" "idle_inhibitor" "tray"];
+        "modules-left"= ["custom/powermenu" "tray" "hyprland/window" "custom/spotify"];
+        "modules-center"= ["hyprland/workspaces"];
+        "modules-right"= ["temperature" "cpu" "memory" "clock" "pulseaudio" "battery" "network" "custom/notification"];
 
         "hyprland/workspaces"= {
             "disable-scroll"= false;
-            "all-outputs"= true;
             "format"= "{icon}";
-            "separate-outputs"= true;
+            "persistent-workspaces" = {
+              "*" = 9;
+              "HDMI-A-1" = 5;
+            };
             "format-icons"= {
                 "1"= " ";
                 "2"= " ";
-                "3"= " ﭮ";
-                "4"= " ";
-                "5"= " ";
-                "6"= " ";
-                "7"= " ";
-                "8"= " ";
-                "9"= " ";
-                "10"= " ";
+                "3"= " ";
+                "4"= " ";
+                "5"= " ";
+                "6"= " ";
+                "7"= " ";
+                "8"= " ";
+                "9"= " ";
                 "urgent"= " ";
                 "focused"= " ";
                 "default"= " ";
@@ -295,9 +328,6 @@
             "on-click"= "wloguot";
             "tooltip"= false;
             "signal"= 8;
-        };
-        "sway/mode"= {
-            "format"= "<span style=\"italic\">{}</span>";
         };
         "idle_inhibitor"= {
             "format"= "{icon}";
@@ -352,7 +382,7 @@
         };
         "network"= {
             "format-wifi"= "   {essid}"; 
-            "format-ethernet"= "{ifname}= {ipaddr}/{cidr} 󰈀 ";
+            "format-ethernet"= "{ifname}: {ipaddr}/{cidr} 󰈀 ";
             "format-linked"= "{ifname} (No IP)  ";
             "format-disconnected"= "睊 ";
             "tooltip-format"= "{essid} {signalStrength}%";
@@ -399,18 +429,6 @@
             "on-click-right"= "swaync-client -d -sw";
             "escape"= true;
         };
-        "custom/media"= {
-            "format"= "{icon} {}";
-            "return-type"= "json";
-            "max-length"= 40;
-            "format-icons"= {
-                "spotify"= " ";
-                "default"= "󰎆 ";
-            };
-            "escape"= true;
-            "exec"= "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
-            "on-click"= "playerctl play-pause";
-        };
         "custom/spotify"= {
             "format"= "{icon} {}";
             "escape"= true;
@@ -422,13 +440,12 @@
             "smooth-scrolling-threshold"= 10;
             "on-scroll-up" = "playerctl -p spotify next";
             "on-scroll-down" = "playerctl -p spotify previous";
-            "exec"= "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
             "exec-if"= "pgrep spotify";
         };
-      "margin-top" = 14;
-      "margin-bottom" = 0;
-      "margin-left" = 0;
-      "margin-right" = 0;
+      "margin-top" = 5;
+      "margin-bottom" = 5;
+      "margin-left" = 5;
+      "margin-right" = 5;
       "spacing" = 0;
 
    }];

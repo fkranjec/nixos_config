@@ -22,7 +22,7 @@
 
           # Execute your favorite apps at launch
           # exec-once = waybar & hyprpaper & swaync
-          exec-once = waybar & swaync
+          exec-once = hyprpaper & spotifyd & swaync & waybar
           # Source a file (multi-file configs)
           # source = ~/.config/hypr/myColors.conf
 
@@ -182,4 +182,9 @@
           bindm = $mainMod, mouse:273, resizewindow
        '';
    };
+       home.file."./.config/hypr/" = {
+            source = ./hypr;
+            recursive = true;
+       };
+
 }
