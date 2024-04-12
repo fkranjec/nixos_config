@@ -2,19 +2,19 @@
   "positionX": "right",
   "positionY": "top",
   "control-center-margin-top": 10,
-  "control-center-margin-bottom": 10,
+  "control-center-margin-bottom": 0,
   "control-center-margin-right": 10,
   "control-center-margin-left": 0,
   "notification-icon-size": 64,
-  "notification-body-image-height": 200,
+  "notification-body-image-height": 100,
   "notification-body-image-width": 200,
-  "timeout": 3,
+  "timeout": 10,
   "timeout-low": 5,
   "timeout-critical": 0,
-  "fit-to-screen": true,
-  "control-center-width": 400,
+  "fit-to-screen": false,
+  "control-center-width": 500,
   "control-center-height": 600,
-  "notification-window-width": 300,
+  "notification-window-width": 500,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
   "transition-time": 200,
@@ -35,13 +35,12 @@
     }
   },
   "widgets": [
-    "label",
-    "menubar",
+    "menubar#label",
     "buttons-grid",
     "volume",
+    "mpris",
     "title",
     "dnd",
-    "mpris",
     "notifications"
   ],
   "widget-config": {
@@ -50,78 +49,43 @@
       "clear-all-button": true,
       "button-text": "Clear All"
     },
-    "backlight": {
-      "label": "🔅",
-      "device": "intel_backlight",
-      "min": 10
-    },
     "dnd": {
       "text": "Do Not Disturb"
     },
     "label": {
       "max-lines": 1,
-      "text": "Control Center"
+      "text": "Controll Center"
     },
     "mpris": {
       "image-size": 96,
       "image-radius": 12
     },
     "volume": {
-      "label": "󰕾"
+      "label": ""
     },
-    "menubar": {
+    "menubar#label": {
       "menu#power-buttons": {
-        "label": "🛑",
+        "label": "", 
         "position": "right",
-        "actions": [
+        "actions": [ 
           {
-            "label": "🔐   Lock",
-            "command": "wlogout"
-          },
-          {
-            "label": "🕸   Logout",
-            "command": "loginctl terminate-session ${XDG_SESSION_ID-}"
-          },
-          {
-            "label": "🔄   Reboot",
+            "label": " Reboot",
             "command": "systemctl reboot"
           },
           {
-            "label": "💣   Shut down",
+            "label": " Lock",
+            "command": "swaylock -f --image ~/.config/wallpapers/snow_woods.jpg"
+          },
+          {
+            "label": " Logout",
+            "command": "swaymsg exit"
+          },
+          {
+            "label": " Shut down",
             "command": "systemctl poweroff"
           }
         ]
-      },
-      "menu#screenshot-buttons": {
-        "label": "󰄀",
-        "position": "left",
-        "actions": [
-          {
-            "label": "󰄁   All Screens",
-            "command": "grimblast save screen"
-          },
-          {
-            "label": "󰄁   Current Active Screen",
-            "command": "grimblast save output"
-          },
-          {
-            "label": "󰄁   Current Active Window",
-            "command": "grimblast save active"
-          },
-          {
-            "label": "󰄁   Select a region",
-            "command": "grimblast save area"
-          }
-        ]
       }
-    },
-    "buttons-grid": {
-      "actions": [
-        {
-          "label": "󱡫",
-          "command": "pavucontrol"
-        }
-      ]
     }
   }
 }

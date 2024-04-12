@@ -11,7 +11,6 @@ vim.opt.showmode = false
 vim.opt.clipboard = 'unnamedplus'
 
 vim.opt.termguicolors = true
-vim.opt.winblend = 20
 
 vim.opt.breakindent = true
 
@@ -366,14 +365,17 @@ require('lazy').setup({
   },
 
   {
-    'lifepillar/vim-solarized8',
+    "rose-pine/neovim",
+    name = "rose-pine",
     lazy = false,
     priority = 1000,
-    transparent = false,
     config = function()
-      vim.cmd.colorscheme 'solarized8_flat'
-
-      vim.cmd.hi 'Comment gui=none'
+      require 'rose-pine' .setup{
+        styles = {
+          transparency = true
+        }
+      }
+      vim.cmd.colorscheme "rose-pine"
     end,
   },
 

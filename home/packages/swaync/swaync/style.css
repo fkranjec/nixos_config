@@ -2,76 +2,62 @@
  * vim: ft=less
  */
 
-/* @define-color noti-bg rgb(22, 25, 37); */
+@define-color noti-border-color rgba(255, 255, 255, 0.15);
 @define-color noti-bg #2E3440;
-@define-color cc-bg alpha(@noti-bg, 0.9);
-
-@define-color noti-border-color @noti-bg;
-@define-color noti-bg-hover #8fbcbb;
+@define-color noti-bg-alt #2e3440;
+@define-color noti-fg #E5E9F0;
+@define-color noti-bg-hover #81A1C1;
+@define-color noti-bg-focus #A3BE8C;
 @define-color noti-close-bg rgba(255, 255, 255, 0.1);
 @define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
+@define-color noti-urgent #BF616A;
 
-/* @define-color bg-selected rgb(137,180,250); */
-@define-color bg-selected #88c0d0;
+@define-color bg-selected rgb(0, 128, 255);
 
-/* Window behind control center and on all other monitors */
-.blank-window {
-  background: alpha(black, 0);
+*{
+  color: @noti-fg;
 }
 
-/* Main panel */
-.control-center {
-  background: @cc-bg;
-  border-radius: 16px;
-  border: 2px solid #88c0d0;
-}
-
-.control-center-list {
-  background: transparent;
-}
-
-.floating-notifications {
-  background: transparent;
-}
-
-/* Single row in panel */
 .notification-row {
-  /* outline: 2px solid blue; */
-  background: transparent;
-  border-radius: 16px;
-  transition: all 0.2s ease-in-out;
+  outline: none;
 }
 
 .notification-row:focus,
 .notification-row:hover {
-  outline: none;
-  background: transparent;
+  background: @noti-bg-focus;
 }
 
 .notification {
-  box-shadow: none;
-  outline: none;
+  border-radius: 8px;
+  margin: 6px 12px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7),
+    0 2px 6px 2px rgba(0, 0, 0, 0.3);
   padding: 0;
-  margin: 0;
 }
 
-/* specific urgency colors */
-.critical .summary {
-  color: #bf616a;
+/* Uncomment to enable specific urgency colors */
+.low {
+  background: yellow;
+  padding: 6px;
+  border-radius: 8px;
 }
+.normal {
+  background: green;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.critical {
+  background: @noti-urgent;
+  padding: 2px;
+  border-radius: 8px;
+}
+
 
 .notification-content {
-  outline: none;
-  margin: 0px;
-  padding: 10px;
-  border-radius: 8px;
-  border: 2px solid #88c0d0;
-  background: @cc-bg;
-}
-
-.control-center .notification-content {
-  border: none;
   background: transparent;
+  padding: 6px;
+  border-radius: 8px;
 }
 
 .close-button {
@@ -79,11 +65,11 @@
   color: white;
   text-shadow: none;
   padding: 0;
-  margin-top: 15px;
-  margin-right: 15px;
+  border-radius: 100%;
+  margin-top: 10px;
+  margin-right: 16px;
   box-shadow: none;
   border: none;
-  border-radius: 100%;
   min-width: 24px;
   min-height: 24px;
 }
@@ -95,34 +81,54 @@
   border: none;
 }
 
-.control-center .close-button {
-  margin-top: 4px;
-  margin-right: 4px;
-}
-
 .notification-default-action,
 .notification-action {
-  padding: 0;
+  padding: 4px;
   margin: 0;
   box-shadow: none;
+  background: @noti-bg;
+  border: 1px solid @noti-border-color;
   color: white;
-  outline: none;
-  background: transparent;
-  border: none;
 }
 
 .notification-default-action:hover,
 .notification-action:hover {
   -gtk-icon-effect: none;
+  background: @noti-bg-hover;
 }
 
-.image {
-  border-radius: 100%;
+.notification-default-action {
+  border-radius: 8px;
 }
+
+/* When alternative actions are visible */
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.notification-action {
+  border-radius: 0px;
+  border-top: none;
+  border-right: none;
+}
+
+/* add bottom border radius to eliminate clipping */
+.notification-action:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+.notification-action:last-child {
+  border-bottom-right-radius: 10px;
+  border-right: 1px solid @noti-border-color;
+}
+
+.image {}
 
 .body-image {
+  margin-top: 6px;
   background-color: white;
-  border-radius: 100%;
+  border-radius: 8px;
 }
 
 .summary {
@@ -134,15 +140,16 @@
 }
 
 .time {
-  font-size: 13px;
+  font-size: 16px;
+  font-weight: bold;
   background: transparent;
   color: white;
   text-shadow: none;
-  margin-right: 5px;
+  margin-right: 18px;
 }
 
 .body {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: normal;
   background: transparent;
   color: white;
@@ -155,92 +162,162 @@
   text-shadow: none;
 }
 
+.control-center {
+  background-color: @noti-bg-alt;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+/* Window behind control center and on all other monitors */
+.blank-window {
+  background: transparent;
+}
+
 /*** Widgets ***/
 
 /* Title widget */
 .widget-title {
   margin: 8px;
   font-size: 1.5rem;
-  outline: 5px solid white;
 }
-.widget-title > button {
+
+.widget-title>button {
   font-size: initial;
   color: white;
   text-shadow: none;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: #88c0d0;
   box-shadow: none;
-  border-radius: 12px;
+  border-radius: 8px;
 }
-.widget-title > button:hover {
+
+.widget-title>button:hover {
   background: @noti-bg-hover;
 }
 
 /* DND widget */
 .widget-dnd {
   margin: 8px;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
-.widget-dnd > switch {
+
+.widget-dnd>switch {
   font-size: initial;
-  border-radius: 12px;
+  border-radius: 8px;
   background: @noti-bg;
   border: 1px solid @noti-border-color;
   box-shadow: none;
 }
-.widget-dnd > switch:checked {
+
+.widget-dnd>switch:checked {
   background: @bg-selected;
 }
-.widget-dnd > switch slider {
+
+.widget-dnd>switch slider {
   background: @noti-bg-hover;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 /* Label widget */
 .widget-label {
   margin: 8px;
 }
-.widget-label > label {
+
+.widget-label>label {
   font-size: 1.1rem;
 }
 
 /* Mpris widget */
 .widget-mpris {
-    /* The parent to all players */
-    color: @foreground;
-}
-.widget-mpris-player {
-    padding: 8px;
-    margin: 8px;
-    color: @foreground;
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-.widget-mpris-title {
-    font-weight: bold;
-    font-size: 1.25rem;
-    color: @foreground;
-    letter-spacing: 2px;
-    font: bold 1em FireCode;
-}
-.widget-mpris-subtitle {
-    font-size: 1em;
-    color: @foreground;
+  /* The parent to all players */
 }
 
-.widget-inhibitors {
-    margin: 8px;
-    font-size: 1.5rem;
+.widget-mpris-player {
+  padding: 8px;
+  margin: 8px;
 }
-.widget-inhibitors > button {
-    font-size: initial;
-    color: white;
-    text-shadow: none;
-    background: @background;
-    border: 1px solid @color6;
-    box-shadow: none;
-    border-radius: 12px;
+
+.widget-mpris-title {
+  font-weight: bold;
+  font-size: 1.25rem;
 }
-.widget-inhibitors > button:hover {
-    background: @noti-bg-hover;
+
+.widget-mpris-subtitle {
+  font-size: 1.1rem;
+}
+
+/* Volume and Brightness Widget*/
+
+.widget-volume {
+  background-color: @noti-bg;
+  padding: 4px 8px 8px 8px;
+  margin: 0px 8px 8px 8px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.widget-backlight {
+  background-color: @noti-bg;
+  padding: 8px 8px 4px 8px;
+  margin: 8px 8px 0px 8px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.KB {
+  padding: 4px 8px 4px 8px;
+  margin: 0px 8px 0px 8px;
+  border-radius: 0;
+}
+
+.power-buttons{
+  background-color: @noti-bg-alt;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+}
+
+
+.power-buttons>button {
+  background: #a3be8c;
+  border: none;
+  margin: 4px;
+  color: #2e3440;
+}
+
+.power-buttons>button:hover {
+  background: #a3be8c;
+}
+
+.widget-menubar>box>.menu-button-bar>button{
+  border: none;
+  background: #88c0d0;
+}
+
+.topbar-buttons>button{
+  border: none;
+  background: #d8dee9;
+  margin: 4px;
+  color: #2e3440;
+}
+
+.widget-buttons-grid{
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+  background-color: @noti-bg;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button{
+  background: @noti-bg;
+  border-radius: 8px;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background: @noti-bg-hover;
 }

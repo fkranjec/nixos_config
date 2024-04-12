@@ -55,8 +55,8 @@
   
   #custom-powermenu {
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
     padding-left: 16px;
     padding-right: 20px;
     border-radius: 8px;
@@ -68,8 +68,8 @@
   
   #mode {
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
     padding-left: 16px;
     padding-right: 20px;
     border-radius: 8px;
@@ -79,8 +79,8 @@
   
   #workspaces {
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
     padding-left: 16px;
     padding-right: 20px;
     border-radius: 8px;
@@ -120,8 +120,8 @@
  
   #temperature {
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
     /*margin-right: 12px;*/
     border-radius: 8px;
     transition: none;
@@ -132,8 +132,8 @@
   
   #pulseaudio {
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 8px;
     transition: none;
     padding: 0 10px;
@@ -143,8 +143,8 @@
   
   #battery {
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
     /* margin-right: 12px; */
     border-radius: 8px;
     transition: none;
@@ -172,8 +172,8 @@
   
   #backlight {
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 8px;
     transition: none;
     padding: 10px 10px;
@@ -183,8 +183,8 @@
   
   #custom-wl-gammarelay-temperature {
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 8px;
     transition: none;
     padding: 10px 10px;
@@ -194,8 +194,8 @@
   
   #cpu {
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 8px;
     transition: none;
     padding: 10px 10px;
@@ -205,8 +205,8 @@
   
   #memory {
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 8px;
     transition: none;
     padding: 10px 10px;
@@ -216,8 +216,8 @@
   
   #clock {
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 8px;
     transition: none;
     padding: 10px 10px;
@@ -227,8 +227,8 @@
   
   #tray {
     margin-top: 6px;
-    margin-right: 6px;
-    margin-right: 6px;
+    margin-right: 5px;
+    margin-right: 5px;
     border-radius: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -238,8 +238,8 @@
   
   #network {
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 8px;
     padding-left: 10px;
     padding-right: 10px;
@@ -249,8 +249,8 @@
 
 #idle_inhibitor {
     margin-top: 6px;
-    margin-left: 6px; 
-    margin-right: 6px;
+    margin-left: 5px; 
+    margin-right: 5px;
     border-radius: 8px;
     transition: none;
     padding: 0 10px;
@@ -260,8 +260,8 @@
 
 #custom-spotify{
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 8px;
     transition: none;
     padding: 0 20px 0 20px;
@@ -271,8 +271,8 @@
 
 #custom-media{
     margin-top: 6px;
-    margin-left: 6px;
-    margin-right: 6px; 
+    margin-left: 5px;
+    margin-right: 5px; 
     border-radius: 8px;
     transition: none;
     padding: 0 20px 0 20px;
@@ -281,8 +281,8 @@
 }   
 #custom-notification{
      margin-top: 6px;
-    margin-left: 6px; 
-    margin-right: 6px; 
+    margin-left: 5px; 
+    margin-right: 5px; 
     border-radius: 8px;
     transition: none;
     padding-left: 10px;
@@ -303,10 +303,6 @@
         "hyprland/workspaces"= {
             "disable-scroll"= false;
             "format"= "{icon}";
-            "persistent-workspaces" = {
-              "*" = 9;
-              "HDMI-A-1" = 5;
-            };
             "format-icons"= {
                 "1"= " ";
                 "2"= " ";
@@ -319,7 +315,10 @@
                 "9"= " ";
                 "urgent"= " ";
                 "focused"= " ";
-                "default"= " ";
+            };
+            "persistent-workspaces" = {
+              "HDMI-A-1" = [1 2 3 4 5];
+              "eDP-1" = [6 7 8 9];
             };
         };
         "custom/powermenu"= {

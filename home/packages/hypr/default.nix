@@ -8,6 +8,18 @@
           monitor=HDMI-A-1,2560x1440@144,0x0,1
           #monitor=HDMI-A-1,1920x1080,0x0,1
           monitor=eDP-1,1920x1080@144,auto,1
+
+env = LIBVA_DRIVER_NAME,nvidia
+env = XDG_SESSION_TYPE,wayland
+
+env = GBM_BACKEND,nvidia-drm
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+env = WLR_NO_HARDWARE_CURSORS,1
+exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec-once=systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
+            exec-once=exec-once=hyprctl setcursor Nordzy-cursors 24
+
             workspace=1,monitor:HDMI-A-1
             workspace=2,monitor:HDMI-A-1
             workspace=3,monitor:HDMI-A-1
@@ -52,7 +64,7 @@
               gaps_in = 5
               gaps_out = 5
               border_size = 2
-              col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
+              col.active_border = rgba(88c0d0ee) 45deg
               col.inactive_border = rgba(595959aa)
 
               layout = master

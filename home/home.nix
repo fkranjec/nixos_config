@@ -34,6 +34,7 @@ in {
       spotify
       spotifyd
       hyprpaper
+      hyprlock
       spicetify-cli
       swaynotificationcenter
       unzip
