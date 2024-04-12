@@ -35,6 +35,9 @@ in {
       spotifyd
       hyprpaper
       hyprlock
+      hypridle
+      grimblast
+      gnome.nautilus
       spicetify-cli
       swaynotificationcenter
       unzip

@@ -34,7 +34,7 @@ exec-once=systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTO
 
           # Execute your favorite apps at launch
           # exec-once = waybar & hyprpaper & swaync
-          exec-once = hyprpaper & spotifyd & swaync & waybar
+          exec-once = hyprpaper & swaync & waybar & hyprlock
           # Source a file (multi-file configs)
           # source = ~/.config/hypr/myColors.conf
 

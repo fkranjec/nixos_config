@@ -58,6 +58,8 @@ environment.sessionVariables = {
      xserver = {
        enable = true;
        displayManager.gdm.enable = true;
+       displayManager.autoLogin.enable = true;
+       displayManager.autoLogin.user = "fkranjec";
      };
     blueman.enable = true;
     printing.enable = true;
