@@ -32,7 +32,9 @@ in {
       brave
       gcc
       spotify
+      python3
       spotifyd
+      playerctl
       hyprpaper
       hyprlock
       hypridle

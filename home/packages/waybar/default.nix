@@ -1,5 +1,4 @@
-{ config, lib, pkgs, ...}:
-{
+{ config, lib, pkgs, ...}:  {
    programs.waybar = {
    enable = true;
    style = ''
@@ -293,7 +292,8 @@
 }
 '';
    
-   settings = [{
+   settings = {
+   bar = {
         "height" = 37;
         "layer"= "top";
         "modules-left"= ["custom/powermenu" "tray" "hyprland/window" "custom/spotify" "custom/media"];
@@ -439,7 +439,7 @@
             "smooth-scrolling-threshold"= 10;
             "on-scroll-up" = "playerctl -p spotify next";
             "on-scroll-down" = "playerctl -p spotify previous";
-            "exec" = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
+            "exec" = "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null";
             "exec-if"= "pgrep spotify";
         };
         "custom/media"= {
@@ -451,7 +451,7 @@
                 "default" = "󰎆 ";
             };
             "escape" = true;
-            "exec" = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
+            "exec" = "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null";
             "on-click" = "playerctl play-pause";
         };
       "margin-top" = 5;
@@ -460,7 +460,8 @@
       "margin-right" = 5;
       "spacing" = 0;
 
-   }];
+   };
+   };
     };
 
        home.file."./.config/waybar/" = {
