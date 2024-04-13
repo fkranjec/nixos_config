@@ -146,8 +146,9 @@ exec-once=systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTO
 
           # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
           bind = $mainMod SHIFT, Return, exec, alacritty
-          bind = $mainMod SHIFT, C, killactive, 
+          bind = $mainMod SHIFT, C, killactive,
           bind = $mainMod SHIFT, B, exec, brave
+          bind = $mainMod SHIFT, L, exec, hyprlock
           bind = $mainMod, V, togglefloating, 
           bind = $mainMod, P, exec, rofi -show drun -show-icons
           bind = $mainMod, Return, layoutmsg, swapwithmaster master

@@ -296,9 +296,9 @@
    settings = [{
         "height" = 37;
         "layer"= "top";
-        "modules-left"= ["custom/powermenu" "tray" "hyprland/window" "custom/spotify"];
+        "modules-left"= ["custom/powermenu" "tray" "hyprland/window" "custom/spotify" "custom/media"];
         "modules-center"= ["hyprland/workspaces"];
-        "modules-right"= ["temperature" "cpu" "memory" "clock" "pulseaudio" "battery" "network" "custom/notification"];
+        "modules-right"= ["temperature" "cpu" "memory" "clock" "pulseaudio" "battery" "network" "idle_inhibitor" "custom/notification"];
 
         "hyprland/workspaces"= {
             "disable-scroll"= false;
@@ -324,7 +324,7 @@
         "custom/powermenu"= {
             "format"= "";
             "interval"= "once";
-            "on-click"= "wloguot";
+            "on-click"= "rofi -show drun -show-icons";
             "tooltip"= false;
             "signal"= 8;
         };
@@ -373,7 +373,7 @@
                 "critical"= 15;
             };
             "format"= "{icon} {capacity}%";
-            "tooltip-format"= "{timeTo}; {capacity}%";
+            "tooltip-format"= "{timeTo}: {capacity}%";
             "format-charging"= "󰂄 {capacity}%";
             "format-plugged"= " ";
             "format-alt"= "{time} {icon}";
@@ -403,7 +403,7 @@
                 "car"= "";
                 "default"= ["󰝟" "󰕿" "󰖀" "󰕾"];
             };
-            "tooltip-format"= "{desc}; {volume}%";
+            "tooltip-format"= "{desc}: {volume}%";
             "on-click"= "pactl set-sink-mute @DEFAULT_SINK@ toggle";
             "on-click-right"= "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
             "on-click-middle"= "pavucontrol";
@@ -439,7 +439,20 @@
             "smooth-scrolling-threshold"= 10;
             "on-scroll-up" = "playerctl -p spotify next";
             "on-scroll-down" = "playerctl -p spotify previous";
+            "exec" = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
             "exec-if"= "pgrep spotify";
+        };
+        "custom/media"= {
+            "format"= "{icon} {}";
+            "return-type" = "json";
+            "max-length" = 40;
+            "format-icons" = {
+                "spotify" = " ";
+                "default" = "󰎆 ";
+            };
+            "escape" = true;
+            "exec" = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
+            "on-click" = "playerctl play-pause";
         };
       "margin-top" = 5;
       "margin-bottom" = 5;
@@ -449,4 +462,10 @@
 
    }];
     };
+
+       home.file."./.config/waybar/" = {
+            source = ./waybar;
+            recursive = true;
+       };
+
 }
