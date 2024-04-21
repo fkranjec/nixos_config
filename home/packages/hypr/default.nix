@@ -34,7 +34,7 @@ exec-once=systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTO
 
           # Execute your favorite apps at launch
           # exec-once = waybar & hyprpaper & swaync
-          exec-once = hyprpaper & swaync & waybar & hyprlock
+          exec-once = hyprpaper & spotify & swaync & waybar & hyprlock
           # Source a file (multi-file configs)
           # source = ~/.config/hypr/myColors.conf
 
@@ -114,6 +114,7 @@ exec-once=systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTO
           master {
               # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
               new_is_master = true
+
           }
 
           gestures {
@@ -139,6 +140,8 @@ exec-once=systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTO
           # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
           # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
+          windowrulev2 = maximize, title:^(Spotify Premium)$
+          windowrule = workspace 6 silent, title:^(Spotify Premium)$
 
 
           # See https://wiki.hyprland.org/Configuring/Keywords/ for more
@@ -149,9 +152,10 @@ exec-once=systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTO
           bind = $mainMod SHIFT, C, killactive,
           bind = $mainMod SHIFT, B, exec, brave
           bind = $mainMod SHIFT, L, exec, hyprlock
-          bind = $mainMod, V, togglefloating, 
+          bind = $mainMod, V, togglefloating,
           bind = $mainMod, P, exec, rofi -show drun -show-icons
           bind = $mainMod, Return, layoutmsg, swapwithmaster master
+          bind = $mainMod , M, fullscreen, 1
 
           # Move focus with mainMod + arrow keys
           bind = $mainMod, h, movefocus, l

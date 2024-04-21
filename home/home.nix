@@ -25,8 +25,8 @@ in {
       waybar
       alacritty
       erlang_26
+      beam.packages.erlang_26.rebar3
       yaws
-      rebar3
       thunderbird
       nodejs
       brave

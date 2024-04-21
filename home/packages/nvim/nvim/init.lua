@@ -238,7 +238,7 @@ require('lazy').setup({
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-
+      
       local servers = {
         angularls = {},
         lua_ls = {
@@ -299,7 +299,8 @@ require('lazy').setup({
         typescript = { 'prettierd' },
         html = { 'prettierd' },
         css = { 'prettierd' },
-        nix = { 'nixpkgs-fmt' }
+        nix = { 'nixpkgs-fmt' },
+        erlang = { 'erlang-ls' }
       },
     },
   },

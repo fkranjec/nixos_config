@@ -296,7 +296,7 @@
    bar = {
         "height" = 37;
         "layer"= "top";
-        "modules-left"= ["custom/powermenu" "tray" "hyprland/window" "custom/spotify" "custom/media"];
+        "modules-left"= ["custom/powermenu" "tray" "hyprland/window"];
         "modules-center"= ["hyprland/workspaces"];
         "modules-right"= ["temperature" "cpu" "memory" "clock" "pulseaudio" "battery" "network" "idle_inhibitor" "custom/notification"];
 
@@ -306,13 +306,13 @@
             "format-icons"= {
                 "1"= " ";
                 "2"= " ";
-                "3"= " ";
+                "3"= " ";
                 "4"= " ";
                 "5"= " ";
-                "6"= " ";
+                "6"= " ";
                 "7"= " ";
                 "8"= " ";
-                "9"= " ";
+                "9"= " ";
                 "urgent"= " ";
                 "focused"= " ";
             };
@@ -321,6 +321,16 @@
               "eDP-1" = [6 7 8 9];
             };
         };
+
+        "hyprland/window"= {
+        "rewrite"= {
+            "(.*) - Brave" = "$1";
+            "(.*) - Chromium"= "$1";
+            "(.*) - Brave Search"= "$1";
+        };
+        "separate-outputs"= true;
+        };
+
         "custom/powermenu"= {
             "format"= "";
             "interval"= "once";
@@ -439,7 +449,7 @@
             "smooth-scrolling-threshold"= 10;
             "on-scroll-up" = "playerctl -p spotify next";
             "on-scroll-down" = "playerctl -p spotify previous";
-            "exec" = "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null";
+            "exec" = "$HOME/.config/waybar/mediaplayer.sh";
             "exec-if"= "pgrep spotify";
         };
         "custom/media"= {
@@ -451,7 +461,7 @@
                 "default" = "󰎆 ";
             };
             "escape" = true;
-            "exec" = "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null";
+            "exec" = "$HOME/.config/waybar/mediaplayer.sh";
             "on-click" = "playerctl play-pause";
         };
       "margin-top" = 5;
