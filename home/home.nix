@@ -40,6 +40,7 @@ in {
       hypridle
       grimblast
       gnome.nautilus
+      xdg-desktop-portal-hyprland
       spicetify-cli
       swaynotificationcenter
       unzip
@@ -55,7 +56,7 @@ in {
       git
       gnumake
       glxinfo
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      #(nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
   };
   programs.home-manager.enable = true;
