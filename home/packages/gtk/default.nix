@@ -4,18 +4,20 @@
   gtk = {
     enable = true;
     cursorTheme = {
-      package = pkgs.nordzy-cursor-theme;
-      name = "Nordzy";
+      package = pkgs.capitaine-cursors-themed;
+      name = "capitaine-cursors-themed-nord";
     };
     font = {
       package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
       name = "FiraCode Nerd Font";
-      size = 14;
+      size = 12;
     };
-    # iconTheme = {
-    #   package = pkgs.nordzy-icon-theme;
-    #   name  = "Nordzy-Icon";
-    # };
+    iconTheme = {
+      package = pkgs.papirus-nord.override {
+         accent = "auroragreen";
+      };
+      name  = "Papirus-Nord";
+    };
     theme = {
       package = pkgs.nordic;
       name = "Nordic";

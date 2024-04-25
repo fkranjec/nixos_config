@@ -19,7 +19,7 @@
             exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
             # exec-once=systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
-            exec-once=exec-once=hyprctl setcursor Nordzy-cursors 24
+            exec-once=ssh-add
 
             workspace=1,monitor:HDMI-A-1
             workspace=2,monitor:HDMI-A-1
