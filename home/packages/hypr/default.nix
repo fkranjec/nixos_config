@@ -35,7 +35,7 @@
 
           # Execute your favorite apps at launch
           # exec-once = waybar & hyprpaper & swaync
-          exec-once = hyprpaper & spotify & swaync & waybar & hyprlock
+          exec-once = hyprpaper & spotify & swaync & waybar
           # Source a file (multi-file configs)
           # source = ~/.config/hypr/myColors.conf
 

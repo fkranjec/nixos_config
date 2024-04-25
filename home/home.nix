@@ -56,7 +56,7 @@ in {
       git
       gnumake
       glxinfo
-      #(nerdfonts.override { fonts = [ "FiraCode" ]; })
+      (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
   };
   programs.home-manager.enable = true;

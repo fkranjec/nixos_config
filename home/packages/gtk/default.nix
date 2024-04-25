@@ -5,18 +5,11 @@
     enable = true;
     cursorTheme = {
       package = pkgs.capitaine-cursors-themed;
-      name = "capitaine-cursors-themed-nord";
-    };
-    font = {
-      package = (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; });
-      name = "FiraCode Nerd Font";
-      size = 12;
+      name = "Capitaine";
     };
     iconTheme = {
-      package = pkgs.papirus-nord.override {
-         accent = "auroragreen";
-      };
-      name  = "Papirus-Nord";
+      package = pkgs.papirus-nord;
+      name  = "auroragreen";
     };
     theme = {
       package = pkgs.nordic;
