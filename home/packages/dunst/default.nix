@@ -1,6 +1,6 @@
 {
- xdg.configFile."dunst" = {
-   source = ./dunst;
-   recursive = true;
- };
- }
+  xdg.configFile."dunst" = {
+    source = ./dunst;
+    recursive = true;
+  };
+}

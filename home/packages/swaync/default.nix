@@ -1,6 +1,6 @@
 {
- xdg.configFile."swaync" = {
-   source = ./swaync;
-   recursive = true;
- };
- }
+  xdg.configFile."swaync" = {
+    source = ./swaync;
+    recursive = true;
+  };
+}

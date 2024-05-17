@@ -59,6 +59,7 @@ in {
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
   };
+
   programs.home-manager.enable = true;
 
 }

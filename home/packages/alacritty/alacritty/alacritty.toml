@@ -7,6 +7,7 @@ style = "Regular"
 
 [window]
 opacity = 0.85
+blur = true
 
 [colors.primary]
 background = "#2E3440"

@@ -14,7 +14,7 @@
 
 @define-color bg-selected rgb(0, 128, 255);
 
-*{
+* {
   color: @noti-fg;
 }
 
@@ -41,6 +41,7 @@
   padding: 6px;
   border-radius: 8px;
 }
+
 .normal {
   background: green;
   padding: 6px;
@@ -275,7 +276,7 @@
   border-radius: 0;
 }
 
-.power-buttons{
+.power-buttons {
   background-color: @noti-bg-alt;
   padding: 8px;
   margin: 8px;
@@ -294,26 +295,26 @@
   background: #a3be8c;
 }
 
-.widget-menubar>box>.menu-button-bar>button{
+.widget-menubar>box>.menu-button-bar>button {
   border: none;
   background: #88c0d0;
 }
 
-.topbar-buttons>button{
+.topbar-buttons>button {
   border: none;
   background: #d8dee9;
   margin: 4px;
   color: #2e3440;
 }
 
-.widget-buttons-grid{
+.widget-buttons-grid {
   padding: 8px;
   margin: 8px;
   border-radius: 8px;
   background-color: @noti-bg;
 }
 
-.widget-buttons-grid>flowbox>flowboxchild>button{
+.widget-buttons-grid>flowbox>flowboxchild>button {
   background: @noti-bg;
   border-radius: 8px;
 }

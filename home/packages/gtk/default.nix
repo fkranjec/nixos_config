@@ -3,13 +3,9 @@
 {
   gtk = {
     enable = true;
-    cursorTheme = {
-      package = pkgs.capitaine-cursors-themed;
-      name = "Capitaine";
-    };
     iconTheme = {
-      package = pkgs.papirus-nord;
-      name  = "auroragreen";
+      package = pkgs.nordzy-icon-theme;
+      name  = "Nordzy";
     };
     theme = {
       package = pkgs.nordic;

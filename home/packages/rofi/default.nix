@@ -1,6 +1,6 @@
 {
- xdg.configFile."rofi" = {
-   source = ./rofi;
-   recursive = true;
- };
- }
+  xdg.configFile."rofi" = {
+    source = ./rofi;
+    recursive = true;
+  };
+}

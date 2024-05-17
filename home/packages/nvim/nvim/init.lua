@@ -241,6 +241,7 @@ require('lazy').setup({
       
       local servers = {
         angularls = {},
+        clangd = {},
         lua_ls = {
           settings = {
             Lua = {
