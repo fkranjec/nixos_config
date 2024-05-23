@@ -67,7 +67,7 @@ in
     blueman.enable = true;
 
     printing.enable = true;
-
+    teamviewer.enable= true;
     pipewire = {
       enable = true;
       alsa.enable = true;

@@ -29,6 +29,7 @@ in {
       yaws
       thunderbird
       nodejs
+      teamviewer
       brave
       gcc
       spotify
