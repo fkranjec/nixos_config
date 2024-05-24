@@ -1,4 +1,4 @@
-require('lua/custom/keymaps')
+require('custom/keymaps')
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -43,11 +43,11 @@ require('lazy').setup({
 
   require 'custom.plugins.treesitter',
    
-  require 'kickstart.plugins.debug',
+  -- require 'kickstart.plugins.debug',
 
   require 'kickstart.plugins.indent_line',
 
-  require 'custom.plugins.vimtex',
+  -- require 'custom.plugins.vimtex',
   
 }, {
   ui = {
