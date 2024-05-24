@@ -1,6 +1,7 @@
 {pkgs, config, ...}:{
   home.packages = with pkgs; [
     ripgrep
+    latexmk
   ];
 
   programs.neovim = {
