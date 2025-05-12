@@ -5,11 +5,10 @@ return {
     config = function()
       require('nvim-treesitter.configs').setup {
         ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
-        auto_install = true,
+        auto_install = false,
         highlight = { 
           enable = true,
-          disable = {"latex"},
-          additional_vim_regex_highlighting = {"latex", "markdown"}
+          additional_vim_regex_highlighting = false;
         },
         indent = { enable = true },
       }

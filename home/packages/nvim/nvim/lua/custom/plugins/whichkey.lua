@@ -7,6 +7,7 @@ return {
 
       -- Document existing key chains
       require('which-key').register {
+        ['<localLeader>l'] = {name = "+vimtex"},
         ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
         ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },

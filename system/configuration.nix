@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 let
   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
     export __NV_PRIME_RENDER_OFFLOAD=1
@@ -29,6 +29,8 @@ in
     WLR_NO_HARDWARE_CURSORS = "1";
   };
 
+  virtualisation.docker.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs = {
@@ -38,6 +40,8 @@ in
   networking.hostName = "nixos";
 
   networking.networkmanager.enable = true;
+  
+  networking.firewall.allowedTCPPorts = [80 443 4200 5051 8000];
 
   time.timeZone = "Europe/Zagreb";
 
@@ -57,13 +61,17 @@ in
   };
 
   services = {
+    displayManager.autoLogin.enable = true;
+    displayManager.autoLogin.user = "fkranjec";
     xserver = {
       enable = true;
       displayManager.gdm.enable = true;
-      displayManager.autoLogin.enable = true;
-      displayManager.autoLogin.user = "fkranjec";
     };
 
+    postgresql = {
+      enable = true;
+      package = pkgs.postgresql_16;
+    };
     blueman.enable = true;
 
     printing.enable = true;
@@ -78,7 +86,6 @@ in
 
   console.keyMap = "croat";
 
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
@@ -105,12 +112,17 @@ in
   environment.systemPackages = with pkgs; [
     nvidia-offload
     wget
+    go
+    redis
+    rose-pine-cursor
+    nwg-look
+    glib
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [nvidia-vaapi-driver];
   };
 

@@ -41,13 +41,14 @@ require('lazy').setup({
 
   require 'custom.plugins.mini',
 
+  require 'custom.plugins.vimtex',
+
   require 'custom.plugins.treesitter',
    
   -- require 'kickstart.plugins.debug',
 
   require 'kickstart.plugins.indent_line',
 
-  -- require 'custom.plugins.vimtex',
   
 }, {
   ui = {

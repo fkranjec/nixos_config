@@ -1,14 +1,16 @@
-{pkgs, config, ...}:{
+{pkgs, unstable, config, ...}:
+{
   home.packages = with pkgs; [
     ripgrep
+    texlive.combined.scheme-full
   ];
 
   programs.neovim = {
-    enable = true;
     vimAlias = true;
     viAlias = true;
     withNodeJs = true;
   };
+
 
   home.file."./.config/nvim/" = {
       source = ./nvim;

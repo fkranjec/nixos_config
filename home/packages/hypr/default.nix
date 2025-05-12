@@ -5,9 +5,9 @@
        plugins = [
        ];
        extraConfig = ''
-            monitor=HDMI-A-1,2560x1440@144,0x0,1
-            #monitor=HDMI-A-1,1920x1080,0x0,1
-            monitor=eDP-1,1920x1080@144,auto,1
+            #monitor=HDMI-A-1,2560x1440@144,auto,1
+            monitor=HDMI-A-1,1920x1080,auto,1
+            monitor=eDP-1,1920x1080@144,0x0,1
 
             env = LIBVA_DRIVER_NAME,nvidia
             env = XDG_SESSION_TYPE,wayland
@@ -16,10 +16,14 @@
             env = __GLX_VENDOR_LIBRARY_NAME,nvidia
             env = WLR_NO_HARDWARE_CURSORS,1
 
+            env = HYPRCURSOR_THEME,rose-pine-hyprcursor
+            env = HYPRCURSOR_SIZE,24
+
+            exec-once = gsettings set org.gnome.desktop.interface cursor-theme BreezeX-RosePine-Linux
+            exec-once = gsettings set org.gnome.desktop.interface cursor-size 24
+
             exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
             # exec-once=systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-
-            exec-once=ssh-add
 
             workspace=1,monitor:HDMI-A-1
             workspace=2,monitor:HDMI-A-1
@@ -85,10 +89,6 @@
                     passes = 1
                 }
 
-                drop_shadow = yes
-                shadow_range = 4
-                shadow_render_power = 3
-                col.shadow = rgba(1a1a1aee)
             }
 
             animations {
@@ -114,7 +114,6 @@
 
             master {
                 # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-                new_is_master = true
 
             }
 
